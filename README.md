@@ -31,8 +31,8 @@ cd votre-repo
 #### 2. Créer un environnement virtuel :
 ```bash
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
+source venv/bin/activate
+venv/Scripts/activate     
 ```
 
 #### 3. Installer les dépendances :
