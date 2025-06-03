@@ -9,7 +9,7 @@ Une application web pour transcrire des fichiers audio en français et traduire 
 ## 🚀 Démo en ligne
 
 L'application est déployée sur Hugging Face Spaces :  
-🔗 [https://huggingface.co/spaces/votre-username/votre-espace](https://huggingface.co/spaces/votre-username/votre-espace)
+🔗 [https://huggingface.co/spaces/AdamaAdam/Audio-Transcription-And-Text-Translation-App](https://huggingface.co/spaces/votre-username/votre-espace)
 
 ## ✨ Fonctionnalités
 
@@ -28,16 +28,19 @@ git clone https://github.com/votre-username/votre-repo.git
 cd votre-repo
 ```
 
-##
-
+2. Créer un environnement virtuel :
+```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate     # Windows
+```
 
-##
-
+3. Installer les dépendances :
+```bash
 pip install -r requirements.txt
+```
 
-##
-
+4. Lancer l'application :
+```bash
 python app.py
+```
