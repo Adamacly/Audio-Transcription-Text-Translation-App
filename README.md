@@ -22,20 +22,20 @@ L'application est déployée sur Hugging Face Spaces :
 
 ## 🛠 Installation locale
 
-1. Cloner le dépôt :
+#### 1. Cloner le dépôt :
 ```bash
 git clone https://github.com/votre-username/votre-repo.git
 cd votre-repo
 ```
 
-2. Créer un environnement virtuel :
+#### 2. Créer un environnement virtuel :
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate     # Windows
 ```
 
-3. Installer les dépendances :
+#### 3. Installer les dépendances :
 ```bash
 pip install -r requirements.txt
 ```
