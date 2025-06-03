@@ -13,17 +13,19 @@ translation_model.eval()
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 translation_model.to(device)
 
-def transcribe(inputs , timestamp):
+def transcribe(inputs):  # We can timestamp as argument
     if inputs is None:
           raise gr.Error("No audio file submitted! Please upload or record an audio file before submitting your request.")
     output = ""
     result = model.transcribe(inputs)
-    if timestamp == "Yes":
-      for indx, segment in enumerate(result['segments']):
-        output += str(datetime.timedelta (seconds=segment['start'])) +" "+ str(datetime.timedelta (seconds=segment['end'])) + "\n"
-        output += segment['text'].strip() + '\n'
-    else:
-      output = result["text"]
+    #if timestamp == "Yes":
+    #  for indx, segment in enumerate(result['segments']):
+    #    output += str(datetime.timedelta (seconds=segment['start'])) +" "+ str(datetime.timedelta (seconds=segment['end'])) + "\n"
+    #    output += segment['text'].strip() + '\n'
+    #else:
+    #  output = result["text"]
+
+    output = result["text"]  # Comment this line and the lines bellow if we have timestamp as argument
 
     return  output
 
@@ -37,23 +39,27 @@ def translate(text):
     return translation_tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
 
 # Fonction principale pour Gradio
-def process(audio, timestamp):
-    transcription = transcribe(audio, timestamp)
+def process(audio):
+    transcription = transcribe(audio)
     translation = translate(transcription)
     return transcription, translation
 
 
 interface = gr.Interface(
     fn=process,
-    inputs=[gr.Audio(sources=["upload"],type="filepath"),
-            gr.Radio(["Yes", "No"], label="Timestamp", info="Displays with timestamp if needed."),],
+    inputs=gr.Audio(sources=["upload", "microphone"], 
+                     label="Téléversez un fichier audio ou enregistrez via le micro",
+                     interactive=True,
+                     type="filepath"
+            ),
+            
     outputs=[
-        gr.Textbox(label="Transcription (Français)"),
-        gr.Textbox(label="Traduction (Anglais)")
+        gr.Textbox(lines=4, max_lines=15, label="Transcription (Français)"),
+        gr.Textbox(lines=4, max_lines=15, label="Traduction (Anglais)")
     ],
-    title="Audio Transcription And Translation App FR->GB",
+    title="Audio Transcription And Translation App 🇫🇷 → 🇬🇧",
     description=(
-        "Transcribe long-form microphone or audio inputs with the click of a button! Demo uses the OpenAI Whisper API"
+        "Transcribe long-form microphone or audio inputs with the click of a button! Demo uses the OpenAI Whisper API for transcription and NLLB for translation"
     )
 )
 
