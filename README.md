@@ -9,7 +9,7 @@ Une application web pour transcrire des fichiers audio en français et traduire 
 ## 🚀 Démo en ligne
 
 L'application est déployée sur Hugging Face Spaces :  
-🔗 [https://huggingface.co/spaces/AdamaAdam/Audio-Transcription-And-Text-Translation-App](https://huggingface.co/spaces/votre-username/votre-espace)
+🔗 [https://huggingface.co/spaces/AdamaAdam/Audio-Transcription-And-Text-Translation-App](https://huggingface.co/spaces/AdamaAdam/Audio-Transcription-And-Text-Translation-App)
 
 ## ✨ Fonctionnalités
 
@@ -24,8 +24,8 @@ L'application est déployée sur Hugging Face Spaces :
 
 #### 1. Cloner le dépôt :
 ```bash
-git clone https://github.com/votre-username/votre-repo.git
-cd votre-repo
+git clone https://github.com/Adamacly/Audio-Transcription-Text-Translation-App.git
+cd Audio-Transcription-Text-Translation-App
 ```
 
 #### 2. Créer un environnement virtuel :
