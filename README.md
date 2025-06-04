@@ -13,7 +13,7 @@ L'application est déployée sur Hugging Face Spaces :
 
 ## ✨ Fonctionnalités
 
-- **Transcription audio** : Conversion de parole en texte (FR) avec timestamps optionnels
+- **Transcription audio** : Conversion de parole en texte (FR)
 - **Traduction automatique** : Traduction français → anglais (EN) de qualité
 - **Multiples sources d'entrée** :
   - Upload de fichiers audio (WAV, MP3)
